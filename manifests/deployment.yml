@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: stesingimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stesingimage
+  template:
+    metadata:
+      labels:
+        app: stesingimage 
+    spec:
+      containers:
+        - name: stesingimage 
+          image: acrnewdemo123.azurecr.io/stesingimage
+          ports:
+          - containerPort: 80
